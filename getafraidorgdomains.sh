@@ -6,7 +6,19 @@
 OUTPUTFOLDER="."
 PUBLICOUTPUT="$OUTPUTFOLDER/results/public.afraid.org.domains.list"
 PRIVATEOUTPUT="$OUTPUTFOLDER/results/private.afraid.org.domains.list"
-NPAGES=5
+NPAGES=1005
+
+if [[ "$1" -ne "" ]];then
+    echo "Exploring the first $1 pages of afraid.org domain registry"
+    NPAGES=$1
+fi
+
+if [[ "$2" -ne "" ]];then
+    echo "Saving output in folder $2"
+    OUTPUTFOLDER=$2
+    PUBLICOUTPUT="$OUTPUTFOLDER/results/public.afraid.org.domains.list"
+    PRIVATEOUTPUT="$OUTPUTFOLDER/results/private.afraid.org.domains.list"
+fi
 
 ###############
 # CREATE DIRS #
